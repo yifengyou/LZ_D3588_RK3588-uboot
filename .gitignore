@@ -87,3 +87,5 @@ GTAGS
 *.orig
 *~
 \#*#
+/lz_d3588-uboot.dts
+/defconfig
