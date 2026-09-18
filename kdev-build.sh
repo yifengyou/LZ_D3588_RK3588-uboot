@@ -18,7 +18,7 @@ ls -alh lz_d3588-uboot.dts u-boot.dts
 
 ./make.sh loader
 ls -alh rk3588_spl*.bin
-mv rk3588_spl_loader_v1.15.113.bin output/rk3588_spl_loader_v1.15.113.bin
+mv rk3588_spl_loader_v1.21.114.bin output/rk3588_spl_loader_v1.21.114.bin
 
 dd if=uboot.img of=output/uboot.img bs=2M count=1
 dumpimage -l output/uboot.img

@@ -3,7 +3,7 @@ name: LZ D3588 Uboot Build
 on:
   push:
     branches:
-      - kdev
+      - lz_d3588
   repository_dispatch:
   workflow_dispatch:
 
@@ -48,7 +48,9 @@ jobs:
           sudo mount /dev/github/runner /builder
           sudo chown -R runner.runner /builder
           sudo apt-get update
-          sudo apt-get install -y device-tree-compiler zip u-boot-tools
+          sudo apt-get install -y device-tree-compiler zip u-boot-tools python-is-python3 \
+            python3 python3-pip
+          sudo ln -svf /usr/bin/python3 /usr/bin/python2
           df -Th
 
       - name: Run UBoot Build in Ubuntu 22.04 container
@@ -61,6 +63,8 @@ jobs:
 
           sudo mkdir -p /builder/release
           sudo cp output/* /builder/release
+          TIMESTAMP=$(date +%Y%m%d)
+          sudo cp /builder/release/uboot.img /builder/release/uboot-${TIMESTAMP}.img
 
       - name: List build output
         run: |

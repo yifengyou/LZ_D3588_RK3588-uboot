@@ -10,7 +10,7 @@
 #include <dt-bindings/input/input.h>
 
 / {
-	model = "LZ D3588 Compiled By yifengyou v2026.09.18-11:02:23";
+	model = "LZ D3588 Compiled By yifengyou v2026.09.18-12:26:15";
 	compatible = "rockchip,rk3588-evb", "rockchip,rk3588";
 
 	adc-keys {
