@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: GPL-2.0
 #
 
-set -e
+set -xe
 JOB=`sed -n "N;/processor/p" /proc/cpuinfo|wc -l`
 SUPPORT_LIST=`ls configs/*[r,p][x,v,k][0-9][0-9]*_defconfig`
 CMD_ARGS=$1

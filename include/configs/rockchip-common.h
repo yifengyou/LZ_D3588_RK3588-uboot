@@ -186,10 +186,7 @@
 	"boot_fit;"
 #else
 #define RKIMG_BOOTCOMMAND			\
-	"run distro_bootcmd;"			\
-	"boot_android ${devtype} ${devnum};"	\
-	"boot_fit;"				\
-	"bootrkp;"
+	"sysboot mmc 0:2 any 0x00500000 extlinux.conf"
 #endif
 
 #endif /* CONFIG_SPL_BUILD */
